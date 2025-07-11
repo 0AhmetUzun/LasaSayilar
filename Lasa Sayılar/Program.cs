@@ -12,7 +12,7 @@ namespace Lasa_Sayılar
         {
             Console.WriteLine("Sayi ust sinirini girin: ");
             int sayiadedi = int.Parse(Console.ReadLine());
-            
+
             for (int sayi = 2; sayi <= sayiadedi; sayi++)
             {
                 bool asal = true;
@@ -31,6 +31,10 @@ namespace Lasa_Sayılar
                     bool Lasa = true;
                     string tersSayiStr = new string(sayi.ToString().Reverse().ToArray());
                     int tersSayi = int.Parse(tersSayiStr);
+                    if (sayi==tersSayi)
+                    {
+                        Lasa = false;
+                    }
                     for (int j = 2; j <= Math.Sqrt(tersSayi); j++)
                     {
                         if (tersSayi % j == 0)
